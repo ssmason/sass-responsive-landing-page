@@ -8,14 +8,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: flex-start; // ✅ prevents auto-stretching
+    align-items: flex-start;
 
     .cta-buttons {
       display: flex;
-      justify-content: center; // ✅ center the CTAs
+      justify-content: center;
       gap: 50px;
       margin: 100px auto 0;
-      width: 100%; // ✅ span full width to allow centering
+      width: 100%;
 
       a.btn {
         width: 290px;
@@ -34,7 +34,7 @@
 
       a.btn.primary {
         background-color: #fff;
-        color: #777777
+        color: #777777;
       }
 
       a.btn.secondary {
@@ -43,11 +43,11 @@
         border-color: #e27730;
       }
     }
-    
   }
 
   .testimonial {
-    width: 286px;
+    width: 30%; // ✅ Instead of 286px — more flexible
+    min-width: 250px; // ✅ Prevents squeezing too much
     padding: 30px;
     background: #ffffff;
     border: 1px solid #dddddd;
@@ -55,7 +55,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-   
 
     p {
       font-family: 'Lato', sans-serif;
@@ -92,6 +91,37 @@
     }
   }
 }
+
+// ✅ Only adjust spacing and prevent wrapping slightly below 900px
+@media (max-width: 900px) {
+  #testimonials {
+    .container {
+      flex-wrap: wrap; // ✅ allow wrapping so CTA goes below testimonials
+      justify-content: center;
+      gap: 30px;
+      padding: 0 16px;
+    }
+
+    .testimonial {
+      width: calc(33.333% - 20px); // ✅ 3 per row with a bit of breathing room
+      min-width: 220px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+
+      a.btn {
+        width: 100%;
+        max-width: 290px;
+      }
+    }
+  }
+}
+
+
+// ✅ Small mobile screens stack naturally
 @media (max-width: 600px) {
   #testimonials {
     padding: 60px 0;
@@ -99,7 +129,6 @@
     .container {
       flex-direction: column;
       align-items: center;
-      padding: 0 16px; // optional for breathing room
     }
 
     .testimonial {
@@ -107,15 +136,13 @@
       max-width: 400px;
       margin-bottom: 30px;
     }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-
-      a.btn {
-        width: 100%;
-        max-width: 290px;
-      }
-    }
+  }
+  #testimonials .container .cta-buttons {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 900px) {
+  #testimonials .container .cta-buttons {
+    margin-top: 30px;
   }
 }
