@@ -1,0 +1,118 @@
+#closing-section {
+  padding: 0;
+  background: #fff;
+  padding: 1px 0 100px 0;
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #444444;
+    padding: 0 0 100px 0;
+  }
+
+  .feature-boxes {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 95px;
+
+    .feature-box {
+      flex: 1;
+      padding: 0 51px;
+      border-right: 1px solid #dddddd;
+
+    //   &:last-child {
+    //     border-right: none;
+    //   }
+
+     &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+       
+      }
+
+      h3 {
+        font-family: 'Lato', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: #444444;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #777777;
+        margin: 0;
+      }
+    }
+  }
+
+  .subheading {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #444444;
+    margin-bottom: 20px;
+  }
+
+  .cta-line {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    color: #777777;
+
+    a {
+      color: #036aab;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  #closing-section {
+    // padding: 40px 0 60px 0;
+
+    .feature-boxes {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .feature-box {
+      width: 100%;
+      padding: 0 51px 0 51px; // ✅ consistent horizontal padding for all
+      border-right: none !important;
+      text-align: center;
+
+      // ✅ Remove desktop-specific overrides
+      &:first-child,
+      &:last-child {
+        padding-left: 51px !important;
+        padding-right: 51px !important;
+      }
+    }
+  }
+}

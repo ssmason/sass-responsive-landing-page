@@ -1,0 +1,91 @@
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
+
+#hero {
+  width: 100%;
+  max-width: 630px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  // padding: 0 16px;
+  box-sizing: border-box;
+ 
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-family: 'Arvo', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;  
+  }
+
+  p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 40px 0;
+    color: #777;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    a.btn {
+      width: 290px;
+      padding: 20px 24px;
+      font-family: 'Lato', sans-serif;
+      font-size: 20px;
+      line-height: 1.2;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-block;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    a.btn.primary {
+      background-color: #fff;
+      color: #777;
+    }
+
+    a.btn.secondary {
+      background-color: #e27730;
+      color: #fff;
+      border-color: #e27730;
+    }
+  }
+
+  // Responsive stack for buttons
+  @media (max-width: 600px) {
+    max-width: 100%;
+  
+    p {
+      // padding: 0 20px
+    }
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      a.btn {
+        width: 100%;
+        max-width: 290px;
+      }
+    }
+  }
+}

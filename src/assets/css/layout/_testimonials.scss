@@ -1,0 +1,121 @@
+#testimonials {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%);
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start; // ✅ prevents auto-stretching
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center; // ✅ center the CTAs
+      gap: 50px;
+      margin: 100px auto 0;
+      width: 100%; // ✅ span full width to allow centering
+
+      a.btn {
+        width: 290px;
+        padding: 20px 24px;
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      a.btn.primary {
+        background-color: #fff;
+        color: #777777
+      }
+
+      a.btn.secondary {
+        background-color: #e27730;
+        color: #fff;
+        border-color: #e27730;
+      }
+    }
+    
+  }
+
+  .testimonial {
+    width: 286px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+   
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #777777;
+      line-height: 24px;
+      margin: 0 0 15px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      cite {
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #aaaaaa;
+        font-style: normal;
+        margin: 0;
+      }
+
+      .stars {
+        display: flex;
+        gap: 4px;
+
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  #testimonials {
+    padding: 60px 0;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px; // optional for breathing room
+    }
+
+    .testimonial {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      a.btn {
+        width: 100%;
+        max-width: 290px;
+      }
+    }
+  }
+}

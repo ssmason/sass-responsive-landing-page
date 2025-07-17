@@ -1,0 +1,60 @@
+#intro-video {
+  background: #ffffff;
+  padding: 0 0 100px 0;
+
+  .background-split {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #f8f8f8 50%, #ffffff 50%, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+    padding: 0 16px; // add padding so it doesn't touch the screen edge
+    box-sizing: border-box;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9; // replaces fixed height for better responsiveness
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .video-poster {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 0 60px 0;
+
+    .video-container {
+      max-width: 100%;
+    }
+  }
+}
